@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/kth-missing-positive-number/description/
+
 #include <iostream>
 #include <vector>
 using namespace std;

@@ -1,0 +1,13 @@
+# Ignore executables
+*.exe
+
+# Ignore object files
+*.o
+*.out
+
+# Ignore build folders (optional)
+build/
+bin/
+
+# Mac / Linux junk (optional)
+.DS_Store
