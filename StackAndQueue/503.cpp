@@ -1,6 +1,8 @@
 // https://leetcode.com/problems/next-greater-element-ii/submissions/2002648730/
 
-#include<bits/c++io.h>
+#include<bits/stdc++.h>
+#include<stack>
+#include<string>
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
