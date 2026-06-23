@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run CP",
+            "type": "shell",
+            "command": "g++ \"${file}\" -std=c++17 -DLOCAL_TEST -o temp.exe && temp.exe"
+        }
+    ]
+}
