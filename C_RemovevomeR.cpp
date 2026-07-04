@@ -1,34 +1,28 @@
-#include <iostream>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 void solve() {
-    int n;
-    cin >> n;
+    int n ;
     string s;
-    cin >> s;
-    
-    // If the first and last characters are the same, 
-    // the whole string or a sub-segment can be reduced to length 1.
-    if (s[0] == s[n - 1]) {
-        cout << 1 << "\n";
-    } 
-    // If they are different, the minimum length is 2.
-    else {
-        cout << 2 << "\n";
+    cin>>n>>s;
+
+    int count =0 ;
+    for(int i=0 ;i<n-1 ;i++){
+        if(s[i] != s[i+1]) count++;
     }
+
+    cout << (count == 1? 2:1) <<"\n";
 }
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int t;
-    cin >> t;
-    while (t--) {
-        solve();
+    if (cin >> t) {
+        while (t--) {
+            solve();
+        }
     }
-    
     return 0;
 }

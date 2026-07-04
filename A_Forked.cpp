@@ -2,15 +2,7 @@
 using namespace std;
 
 void solve() {
-    int x;
-    cin>>x;
-
-    int y =1;
-    while(x>0){
-        y*= 10;
-        x/=10;
-    }
-    cout <<y+1<<"\n";
+    
 }
 
 int main() {
