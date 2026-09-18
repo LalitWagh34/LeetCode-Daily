@@ -5,13 +5,13 @@ public:
 
         int left = 0;
         int maxi=0;
-        vector<int> vis(26, 0);
+        vector<int> vis(256, 0);
 
         for (int right = 0; right < s.size(); right++) {
-            vis[s[right]- 'a']++;
+            vis[s[right]]++;
 
-            while(vis[s[right] -'a'] > 1){
-                vis[s[left] -'a']--;
+            while(vis[s[right] ] > 1){
+                vis[s[left] ]--;
                 left++;
 
             }
