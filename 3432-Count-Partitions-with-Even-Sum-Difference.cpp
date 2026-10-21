@@ -7,8 +7,16 @@ public:
             total += x;
         }
 
-        return (total %2 ==0) ? nums.size()-1 :0;
+        int left=0;
+        int count=0;
+        for(int i=0;i<nums.size()-1 ;i++){
+            left += nums[i];
 
-
+            int right = total - left;
+            if((left -right) %2 == 0) {
+                count++;
+            }
+        }
+        return count;
     }
 };
