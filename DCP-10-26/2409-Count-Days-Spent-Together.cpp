@@ -1,13 +1,18 @@
 class Solution {
 public:
-    int countDaysTogether(string a, string b, string c, string d) {
-        return max(0, min(f(b), f(d)) - max(f(a), f(c)) + 1);
-    }
-
-    int f(auto& s) {
-        int m = (s[0] - '0') * 10 + (s[1] - '0');
-        int q = (s[3] - '0') * 10 + (s[4] - '0');
-
-        return (275 * m) / 9 - 2 * ((m + 9) / 12) + q - 30;
+    int countDaysTogether(string arriveAlice, string leaveAlice, string arriveBob, string leaveBob) {
+        int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        auto toDay = [&](const string& s) {
+            int m = (s[0] - '0') * 10 + (s[1] - '0');
+            int d = (s[3] - '0') * 10 + (s[4] - '0');
+            int res = d;
+            for (int i = 0; i < m - 1; i++) res += days[i];
+            return res;
+        };
+        int aStart = toDay(arriveAlice), aEnd = toDay(leaveAlice);
+        int bStart = toDay(arriveBob), bEnd = toDay(leaveBob);
+        int start = max(aStart, bStart);
+        int end = min(aEnd, bEnd);
+        return start <= end ? end - start + 1 : 0;
     }
 };
